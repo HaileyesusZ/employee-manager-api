@@ -9,7 +9,7 @@ const empoloyeeSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  birth: {
+  dateOfBirth: {
     type: Date,
     required: true,
   },

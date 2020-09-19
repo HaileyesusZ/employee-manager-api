@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 // @desc  delete employee by its id
 // @access  Public
 
-router.delete('/remove/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   Employee.findById(req.params.id).then((employee) => {
     employee
       .remove()
@@ -37,12 +37,12 @@ router.delete('/remove/:id', (req, res) => {
 // @desc  create employee
 // @access  Public
 
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
   const employeeData = {}
 
   if (req.body.name) employeeData.name = req.body.name
   if (req.body.gender) employeeData.gender = req.body.gender
-  if (req.body.birth) employeeData.birth = req.body.birth
+  if (req.body.dateOfBirth) employeeData.dateOfBirth = req.body.dateOfBirth
   if (req.body.salary) employeeData.salary = req.body.salary
 
   Employee(employeeData)
@@ -55,7 +55,7 @@ router.post('/add', (req, res) => {
 // @desc   update employee by employees id
 // @access  Public
 
-router.patch('/update/:id', (req, res) => {
+router.patch('/:id', (req, res) => {
   Employee.findById(req.params.id).then((employee) => {
     if (!employee) {
       return res.status(404).json({ message: 'no employee found' })
@@ -66,8 +66,8 @@ router.patch('/update/:id', (req, res) => {
       if (req.body.gender) {
         employee.gender = req.body.gender
       }
-      if (req.body.birth) {
-        employee.birth = req.body.birth
+      if (req.body.dateOfBirth) {
+        employee.dateOfBirth = req.body.dateOfBirth
       }
       if (req.body.salary) {
         employee.salary = req.body.salary
