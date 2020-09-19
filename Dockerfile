@@ -1,11 +1,11 @@
 FROM node:12
 
-WORKDIR /app
+WORKDIR /employeemanagerapi
 
-COPY package.json /app
+COPY package.json /employeemanagerapi
 
 RUN npm install
 
-COPY . /app
+COPY . /employeemanagerapi
 
 CMD ["yarn", "start"]
