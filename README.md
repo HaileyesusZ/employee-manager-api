@@ -1,0 +1,4 @@
+# employee-manager-api
+TECH STACK
+SERVER - EXPRESS (NODE JS)
+DATABASE - MONGO DB
